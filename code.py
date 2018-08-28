@@ -1,9 +1,8 @@
 from optparse import OptionParser
 import os, base64, uuid, hashlib
-!pip install pycrypto
 from Crypto.Cipher import AES
 import time
-
+import pickle
   
 lastOwnerId = 1
 nodeNumber = 0
@@ -119,7 +118,7 @@ while option is not 0:
     print(longestChain())
 
 #   saving the data into pickle
-  with open("data.pk") as f:
+  with open("data.pk", 'wb') as f:
     pickle.dump(Nodes, f)
     
 # if __name__ == '__main__':
